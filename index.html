@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Nombre Persona</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Hola, {{ nombrePersona || 'nombre_persona' }}!</h1>
+        <input type="text" v-model="nombrePersona" placeholder="Ingresa tu nombre">
+    </div>
+
+    <script>
+        
+        const app = Vue.createApp({
+            data() {
+                return {
+                    nombrePersona: '' 
+                };
+            }
+        });
+        app.mount('#app'); 
+    </script>
+</body>
+</html>
